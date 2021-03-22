@@ -11,8 +11,15 @@ $(function () {
   $.ajax('./data/page-1.json', ajaxSettings)
     .then(data => {
       data.animals.forEach(animal => {
-        $('#photo-template').append(`<h2>${animal.title}</h2>`);
+        $('main').append(`<div><h2>${animal.title}</h2><img src="${animal.image_url}" alt=""><p>${animal.description}</p></div>`);
+        $('select').append(`<option>${animal.keyword}</option>`)
       });
+
+      // $('option').click()
+
+
+
+
     })
 
 
